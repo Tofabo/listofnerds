@@ -1,0 +1,49 @@
+<div id="header">
+    <h1 class="inline-block">List O' Nerds</h1>
+    <div id="headerbox"><h3 class="inline-block">Welcome {{ curUser.name }}, <a href="/logout" class="inline-block"> logout</a></h3></div>
+</div>
+
+
+<div class="center">
+<a href="#!/add"><button>Add a new nerd!</button></a>
+<h2>Active</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Ability</th>
+        <th>Likes</th>
+        <th>Action</th>
+        <th>Change Status</th>
+    </tr>
+    <tr ng-repeat="nerd in activenerds track by $index">
+        <td>{{ nerd.name }}</td>
+        <td>{{ nerd.ability }}</td>
+        <td>{{ nerd.likes }}</td>
+        <td><button ng-click="like(nerd._id)">Like</button>
+            <button ng-click="delete(nerd._id)">Delete</button></td>
+        <td><button ng-click="changeStatus(nerd._id)">Put down</button></td>
+    </tr>
+</table>
+
+<h2>Inactive</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Ability</th>
+        <th>Likes</th>
+        <th>Action</th>
+        <th>Change Status</th>
+    </tr>
+    <tr ng-repeat="nerd in inactivenerds track by $index">
+        <td>{{ nerd.name }}</td>
+        <td>{{ nerd.ability }}</td>
+        <td>{{ nerd.likes }}</td>
+        <td><button ng-click="like(nerd._id)">Like</button>
+            <button ng-click="delete(nerd._id)">Delete</button></td>
+        <td><button ng-click="changeStatus(nerd._id)">Res</button></td>
+    </tr>
+</table>
+
+</div>

@@ -1,0 +1,7 @@
+<h1>Make your nerds here!</h1>
+<p ng-repeat="error in errors track by $index" class="red">{{ error }}</p>
+<form ng-submit="add(newNerd)">
+    <label for="">Name: <input type="text" ng-model="newNerd.name"></label>
+    <label for="">Ability: <input type="text" ng-model="newNerd.ability"></label>
+    <input type="submit" value="Add!"><a href="#!/dash"><button>Cancel</button></a>
+</form>
